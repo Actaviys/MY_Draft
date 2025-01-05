@@ -47,22 +47,20 @@ void initButtonsFunk(){ // Функція ініціалізації кнопо�
   right_mouse_btn.initButton(&tft, 75, 229, 150, 20, WHITE, CYAN, BLUE, "<<<---", 1);
   mouse_ring_btn.initButton(&tft, 200, 229, 100, 20, WHITE, CYAN, BLUE, "___", 1);
   left_mouse_btn.initButton(&tft, 325, 229, 150, 20, WHITE, CYAN, BLUE, "--->>>", 1);
+  volume_slider_btn.initButton(&tft, 100, 130, 30, 100, WHITE, DARK_RED, WHITE, " ", 1); // Слайдер для регулювання гучності ///////////////////////////////////////////////////
 
-  // sensor_btn.drawButton(touchFlag);
+  sensor_btn.drawButton(touchFlag);
   on_off_btn.drawButton(ButtFlag_OnOff);
   right_mouse_btn.drawButton(false);
   mouse_ring_btn.drawButton(false);
   left_mouse_btn.drawButton(false);
+  volume_slider_btn.drawButton(false); // Ініціалізую слайдер
 }
 
 
 
 
-void SliderVolume(int sldVal, int x=30, int y=30){ // Слайдер для регулювання гучності ///////////////////////////////////////////////////
-  tft.fillRect(x-2, y-8, 4, 150, RED); // Полоска 
-  volume_slider_btn.initButton(&tft, x, (y+141)-sldVal, 30, 15, WHITE, DARK_RED, WHITE, "-", 1); // Створюю кнопку 
-  volume_slider_btn.drawButton(false); // Ініціалізую кнопку
-}
+
 
 
 
@@ -75,7 +73,6 @@ void setup() {
 
   initButtonsFunk();
 
-  SliderVolume(30); // Слайдер
 }
 
 
@@ -167,12 +164,12 @@ void ControlsButtonList(){ // Контроль всіх кнопок
 
 
 // Перевірка для слайдера
+  PressedVolume = pixel_y;
   if (volume_slider_btn.justPressed()) {
+    Serial.println(PressedVolume);
     volume_slider_btn.drawButton(true);
     ButtFlag_OnOff = !ButtFlag_OnOff;
     digitalWrite(LED1, ButtFlag_OnOff);
-    SliderVolume(pixel_y);
-    // sldVal = pixel_y;
 
   } if (volume_slider_btn.justReleased()) volume_slider_btn.drawButton(false);
   // Serial.print(pixel_x);
@@ -210,11 +207,11 @@ void loop() {
     }
   }
 
+  ControlsButtonList();
   static uint32_t tmr = 0; // Таймер на відправку даних
   if (millis() - tmr > 110){ // Відправляю дані
     tmr = millis();
     texts_actives();
-    ControlsButtonList();
   }
 
 }

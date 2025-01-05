@@ -48,7 +48,7 @@ void initButtonsFunk(){ // Функція ініціалізації кнопо�
   mouse_ring_btn.initButton(&tft, 200, 229, 100, 20, WHITE, CYAN, BLUE, "___", 1);
   left_mouse_btn.initButton(&tft, 325, 229, 150, 20, WHITE, CYAN, BLUE, "--->>>", 1);
 
-  // sensor_btn.drawButton(touchFlag);
+  sensor_btn.drawButton(touchFlag);
   on_off_btn.drawButton(ButtFlag_OnOff);
   right_mouse_btn.drawButton(false);
   mouse_ring_btn.drawButton(false);
@@ -59,11 +59,11 @@ void initButtonsFunk(){ // Функція ініціалізації кнопо�
 
 
 void SliderVolume(int sldVal, int x=30, int y=30){ // Слайдер для регулювання гучності ///////////////////////////////////////////////////
-  tft.fillRect(x-2, y-8, 4, 150, RED); // Полоска 
-  volume_slider_btn.initButton(&tft, x, (y+141)-sldVal, 30, 15, WHITE, DARK_RED, WHITE, "-", 1); // Створюю кнопку 
-  volume_slider_btn.drawButton(false); // Ініціалізую кнопку
-}
 
+  tft.fillRect(x-2, y-8, 4, 150, RED); // Полоска 
+  volume_slider_btn.initButton(&tft, x, y+sldVal, 30, 15, WHITE, DARK_RED, RED, " ", 1);
+  volume_slider_btn.drawButton(false);
+}
 
 
 void setup() {
@@ -75,7 +75,7 @@ void setup() {
 
   initButtonsFunk();
 
-  SliderVolume(30); // Слайдер
+  SliderVolume(20, 40, 50); // Слайдер
 }
 
 
@@ -147,7 +147,6 @@ void ControlsButtonList(){ // Контроль всіх кнопок
   bool down = Touch_getXY();
   sensor_btn.press(down && sensor_btn.contains(pixel_x, pixel_y));
   on_off_btn.press(down && on_off_btn.contains(pixel_x, pixel_y));
-  volume_slider_btn.press(down && volume_slider_btn.contains(pixel_x, pixel_y)); // Визначаю позицію натискуку для слайдера
 
 // Перевірки натискання на кнопки
   if (sensor_btn.justPressed()) { // Включення та відключення надсиланеня даних з сенсора
@@ -164,20 +163,6 @@ void ControlsButtonList(){ // Контроль всіх кнопок
 
     ValueButtonSend("On/Off", ButtFlag_OnOff);
   } if (on_off_btn.isPressed()) on_off_btn.drawButton(ButtFlag_OnOff);
-
-
-// Перевірка для слайдера
-  if (volume_slider_btn.justPressed()) {
-    volume_slider_btn.drawButton(true);
-    ButtFlag_OnOff = !ButtFlag_OnOff;
-    digitalWrite(LED1, ButtFlag_OnOff);
-    SliderVolume(pixel_y);
-    // sldVal = pixel_y;
-
-  } if (volume_slider_btn.justReleased()) volume_slider_btn.drawButton(false);
-  // Serial.print(pixel_x);
-  // Serial.print(" - ");
-  // Serial.println(pixel_y);
 }
 
 
@@ -215,6 +200,7 @@ void loop() {
     tmr = millis();
     texts_actives();
     ControlsButtonList();
+    //
   }
 
 }

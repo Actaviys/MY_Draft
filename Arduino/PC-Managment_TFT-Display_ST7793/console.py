@@ -10,7 +10,7 @@ ui.setWindowTitle("MEGA-2560")
 
 
 serial = QSerialPort() # Створюю порт
-serial.setBaudRate(9600) #Швидкість Порту 460800
+serial.setBaudRate(9600) #Швидкість Порту 9600
 ports = QSerialPortInfo().availablePorts() # Зберігаю інформацію про порти
 ports_list = []
 for pr in ports:

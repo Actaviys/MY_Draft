@@ -1,8 +1,34 @@
 import subprocess as sp
 import webbrowser as wb
 from os import rename
-import serial
-import serial.tools.list_ports
+# import serial
+# import serial.tools.list_ports
+
+
+
+#-#################
+# from QTWindow import open_window as ow
+def basic_func_open_qt_window(FileNameWind:str):
+    """ 
+    Виконую скрипти .bat для відкриття вікон QT
+    """
+    fnw = "".join(FileNameWind)
+    if fnw == "1": fnw = "LoadQTWindow" # Перевизначення назв файлів .bat
+    
+    file_path = "QTWindow\\" + fnw + ".bat"
+    try:
+        # Виконуємо .bat файл за допомогою subprocess
+        sp.run(file_path, shell=True, check=True)
+        print(f"Файл {fnw} виконано успішно.")
+        
+    except sp.CalledProcessError as e:
+        print(f"Помилка при виконанні файлу {fnw}: {e}")
+    except FileNotFoundError:
+        print(f"Файл {fnw} не знайдено.")
+##################
+
+
+
 
 
 #-#################
@@ -72,24 +98,24 @@ def create_and_save_as_bat(args:list): # Створюю скріпти (.bat)
 
 
 #-#################
-def connect_to_Arduino(args): # Приєднатись до Arduino
-    com = "".join(args)
+# def connect_to_Arduino(args): # Приєднатись до Arduino
+#     com = "".join(args)
     
-    if com == "L": list_serial_ports() # Список портів
-    # if com == 
-        # print(com)
+#     if com == "L": list_serial_ports() # Список портів
+#     # if com == 
+#         # print(com)
 
 
-def list_serial_ports(): # Виводжу підключені Arduino
-    ports = serial.tools.list_ports.comports()
-    port_list = []
-    if ports:
-        print("Доступні порти:")
-        for port in ports:
-            port_list.append(port.device)
-            print(f"  - {port.device}: {port.description}")
-    else:
-        print("Серійні порти не знайдені.")
-    return port_list
+# def list_serial_ports(): # Виводжу підключені Arduino
+#     ports = serial.tools.list_ports.comports()
+#     port_list = []
+#     if ports:
+#         print("Доступні порти:")
+#         for port in ports:
+#             port_list.append(port.device)
+#             print(f"  - {port.device}: {port.description}")
+#     else:
+#         print("Серійні порти не знайдені.")
+#     return port_list
 ##################
 

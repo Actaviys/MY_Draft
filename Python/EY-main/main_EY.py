@@ -1,4 +1,4 @@
-import CommandsFunctions
+import Commands_Functions
 allcommands = \
 """ 
 - help - Всі команди
@@ -37,14 +37,16 @@ def main():  # Основна функція з циклом
                 case "help" | "допомога":  # Команда з списком команд
                     print(allcommands)
 
-                case "A" | "Ф": CommandsFunctions.connect_to_Arduino(args) # Підключитись до Ардуіно
+                case "A" | "Ф": Commands_Functions.connect_to_Arduino(args) # Підключитись до Ардуіно
                 
-                case "yt" | "не": CommandsFunctions.youtube_open_func(args) # Відкриває ютуб 
+                case "yt" | "не": Commands_Functions.youtube_open_func(args) # Відкриває ютуб 
                 
-                case "S" | "І": CommandsFunctions.script_comand_read(args) # Запускає скріпти
-                case "SC" |"ІС": CommandsFunctions.create_and_save_as_bat(args) # Створюю скріпт
+                case "S" | "І": Commands_Functions.script_comand_read(args) # Запускає скріпти
+                case "SC" |"ІС": Commands_Functions.create_and_save_as_bat(args) # Створюю скріпт
                 
-                case "T" | "Е" : CommandsFunctions.wb.open("https://translate.google.com/?sl=uk&tl=en&op=translate") # Перекладач
+                case "T" | "Е" : Commands_Functions.wb.open("https://translate.google.com/?sl=uk&tl=en&op=translate") # Перекладач
+                
+                case "w" | "ц": Commands_Functions.basic_func_open_qt_window(args)
                 
                 
                 

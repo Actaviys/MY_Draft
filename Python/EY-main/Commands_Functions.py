@@ -6,6 +6,11 @@ from os import rename
 
 
 
+def open_other_files():
+    print("OOOOOOOOO")
+
+
+
 #-#################
 # from QTWindow import open_window as ow
 def basic_func_open_qt_window(FileNameWind:str):
@@ -27,21 +32,6 @@ def basic_func_open_qt_window(FileNameWind:str):
         print(f"Файл {fnw} не знайдено.")
 ##################
 
-
-
-
-
-#-#################
-def youtube_open_func(args): # Відкриває ютуб по командах
-    if args:
-        ytc = "".join(args)
-        if ytc == "M" or ytc == "Музика": 
-            wb.open("https://www.youtube.com/watch?v=V7HhLEOKrlc&list=PL6yK8n0u0pOcGgnm-8kYnD3UNmFAr2ZQT") # Посилання на плейліст
-        if ytc == "P" or ytc == "Списки":
-            wb.open("https://www.youtube.com/feed/playlists")
-                
-    else: wb.open("https://www.youtube.com/") # Якщо небуло команди то на головну
-##################
 
 
 
@@ -91,6 +81,23 @@ def create_and_save_as_bat(args:list): # Створюю скріпти (.bat)
     
     print(f"Файл успішно створено і збережено як {filename}")
 ##################
+
+
+
+
+
+#-#################
+def youtube_open_func(args): # Відкриває ютуб по командах
+    if args:
+        ytc = "".join(args)
+        if ytc == "M" or ytc == "Музика": 
+            wb.open("https://www.youtube.com/watch?v=V7HhLEOKrlc&list=PL6yK8n0u0pOcGgnm-8kYnD3UNmFAr2ZQT") # Посилання на плейліст
+        if ytc == "P" or ytc == "Списки":
+            wb.open("https://www.youtube.com/feed/playlists")
+                
+    else: wb.open("https://www.youtube.com/") # Якщо небуло команди то на головну
+##################
+
 
 
 

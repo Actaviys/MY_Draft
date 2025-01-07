@@ -37,7 +37,7 @@ def main():  # Основна функція з циклом
                 case "help" | "допомога":  # Команда з списком команд
                     print(allcommands)
 
-                case "A" | "Ф": Commands_Functions.connect_to_Arduino(args) # Підключитись до Ардуіно
+                # case "A" | "Ф": Commands_Functions.connect_to_Arduino(args) # Підключитись до Ардуіно
                 
                 case "yt" | "не": Commands_Functions.youtube_open_func(args) # Відкриває ютуб 
                 
@@ -46,7 +46,9 @@ def main():  # Основна функція з циклом
                 
                 case "T" | "Е" : Commands_Functions.wb.open("https://translate.google.com/?sl=uk&tl=en&op=translate") # Перекладач
                 
-                case "w" | "ц": Commands_Functions.basic_func_open_qt_window(args)
+                case "w" | "ц": Commands_Functions.basic_func_open_qt_window(args) # Відкриваю нове вікно QT
+
+                case "m" | "ь": Commands_Functions.open_other_files()
                 
                 
                 

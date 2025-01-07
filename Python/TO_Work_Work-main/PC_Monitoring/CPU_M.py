@@ -18,7 +18,7 @@ print(pl.disk_usage("/")) # Навантаження на диск
 # print(pl.Process().cmdline()) # Виводить посилання cmd на файл з відки запушенно файл
 # print(pl.Process().cpu_affinity()) # Список ядер процесора
 # print(pl.boot_time()) # Виводить час роботи процесора
-
+#
 
 
 # while True:

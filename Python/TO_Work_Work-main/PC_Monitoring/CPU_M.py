@@ -10,7 +10,7 @@ import psutil as pl
 
 
 # print(pl.disk_partitions()) # Список дисків на ПК
-print(pl.disk_usage("/")) # Навантаження на диск
+# print(pl.disk_usage("/")) # Навантаження на диск
 
 
 
@@ -21,5 +21,5 @@ print(pl.disk_usage("/")) # Навантаження на диск
 #
 
 
-# while True:
-#     print(pl.cpu_percent(interval=1.5))
+while True:
+    print(pl.cpu_percent(interval=1.5))

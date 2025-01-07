@@ -10,5 +10,5 @@ import psutil as pl
 # print(pl.Process().username()) # Ім'я комп'ютера
 
 
-while True:
-    print(pl.cpu_percent(interval=1.5))
+# while True:
+#     print(pl.cpu_percent(interval=1.5))

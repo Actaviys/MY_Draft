@@ -1,14 +1,15 @@
+import time
 import Commands_Functions
 allcommands = \
 """ 
-- help - Всі команди
-- A - Підключитись до Arduino
-- yt - Відкриваю ютуб 
-- qq - Вихід з програми
-- S - Скріпти (По назві)
-- SC - Створюю скріпт (name, text_script)
-- T - Перекладач
+- help --> Всі команди
+- yt --> Відкриваю ютуб 
+- qq --> Вихід з програми
+- T --> Перекладач
+- w --> Відкриваю нове вікно QT
 
+- f - Відкриваю різні файли
+- A - Підключитись до Arduino
 """
 
 
@@ -34,30 +35,24 @@ def main():  # Основна функція з циклом
 
             match command:  # Команди
 
-                case "help" | "допомога":  # Команда з списком команд
+                case "h" | "р":  # Команда з списком команд #
                     print(allcommands)
+                case "yt" | "не": Commands_Functions.youtube_open_func(args) # Відкриває ютуб #
+                case "T" | "Е" : Commands_Functions.wb.open("https://translate.google.com/?sl=uk&tl=en&op=translate") # Перекладач #
+                case "w" | "ц": Commands_Functions.basic_func_open_qt_window(args) # Відкриваю нове вікно QT #
+                
+                case "PC" | "ЗС": Commands_Functions.pc_read_information(args) # Виводжу інформацію про комп'ютер
+                
+                
 
-                # case "A" | "Ф": Commands_Functions.connect_to_Arduino(args) # Підключитись до Ардуіно
-                
-                case "yt" | "не": Commands_Functions.youtube_open_func(args) # Відкриває ютуб 
-                
-                case "S" | "І": Commands_Functions.script_comand_read(args) # Запускає скріпти
-                case "SC" |"ІС": Commands_Functions.create_and_save_as_bat(args) # Створюю скріпт
-                
-                case "T" | "Е" : Commands_Functions.wb.open("https://translate.google.com/?sl=uk&tl=en&op=translate") # Перекладач
-                
-                case "w" | "ц": Commands_Functions.basic_func_open_qt_window(args) # Відкриваю нове вікно QT
-
-                case "m" | "ь": Commands_Functions.open_other_files()
+                # case "f" | "а": Commands_Functions.open_other_files() # Відкриваю різні файли
                 
                 
-                
-                
-                case "qq" | "йй": print("Exit"); break # Виходжу з програми
-                case _:  # Якщо команда не роспізнана
+                case "qq" | "йй": print("Пака :)"); time.sleep(0.5); break # Виходжу з програми #
+                case _:  # Якщо команда не роспізнана #
                     print("Invalid command!!!")
         except:
-            # Якщо команда відсутня виводжу підказку
+            # Якщо команда відсутня виводжу підказку #
             print("Incorrect command... \nEnter 'help'")
 
 if __name__ == "__main__": # Для циклу

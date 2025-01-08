@@ -1,17 +1,34 @@
 import webbrowser as wb
 from WidowFile.PYWin import WindEY1, QtWindEY2
+import psutil as pl
 
 
-def open_other_files():
+
+def pc_read_information(elementName:list):
     """ 
-    Функція для відкриття файлів
+    Функція читання параметрів ПК. \n
+    Приймає список з елементів які потрібно вивести. \n
+    Доступні для читання елементи: \n
+    [-CPU, -GPU, -MEMORY, -DISK, -NAME, -OS]
     """
-    print("OOOOOOOOO")
+    available_items = ["CPU", "DISK"]
+    for elnm in elementName:
+        if elnm in available_items:
+            try:
+                if elnm == "CPU":
+                    print(f"Список ядер процесора: {pl.Process().cpu_affinity()}")
+                    print(f"Кількість віртуальних ядер: {pl.cpu_count()}")
+                    print(f"Частота процесора: {pl.cpu_freq().current}")
+                    # print(elnm)
+                
+            except: print(f"Не виконано {elnm}")
+            # print(elnm)
 
+
+pc_read_information(["123qw", "wer", "CPU", "234", "DISK"])
 
 
 #-#################
-# from QTWindow import open_window as ow
 def basic_func_open_qt_window(FileNameWind):
     """ 
     Функція відкриття вікон QT. \n
@@ -35,8 +52,6 @@ def basic_func_open_qt_window(FileNameWind):
 
 
 
-
-
 #-#################
 def youtube_open_func(args): # Відкриває ютуб по командах
     if args:
@@ -50,11 +65,24 @@ def youtube_open_func(args): # Відкриває ютуб по командах
 ##################
 
 
+# def open_other_files():
+#     """ 
+#     Функція для відкриття файлів
+#     """
+#     print("OOOOOOOOO")
 
 
 
 
 
+
+
+
+
+
+
+
+###
 #-#################
 # def connect_to_Arduino(args): # Приєднатись до Arduino
 #     com = "".join(args)

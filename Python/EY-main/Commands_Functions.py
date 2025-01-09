@@ -1,7 +1,7 @@
 import webbrowser as wb
 from WidowFile.PYWin import WindEY1, QtWindEY2
 import psutil as pl
-
+import pyautogui as pg
 
 
 def pc_read_information(elementName:list):
@@ -63,6 +63,22 @@ def youtube_open_func(args): # Відкриває ютуб по командах
                 
     else: wb.open("https://www.youtube.com/") # Якщо небуло команди то на головну
 ##################
+
+
+
+
+
+
+#-#################
+def pc_off_func(): # Вимикає комп'ютер
+    # 'shutdown /s /t 0'
+    pg.hotkey("win", "r")
+    # pg.typewrite("shutdown /s /t 0")
+    pg.typewrite("cmd")
+    pg.hotkey("enter")
+##################    
+
+
 
 
 # def open_other_files():

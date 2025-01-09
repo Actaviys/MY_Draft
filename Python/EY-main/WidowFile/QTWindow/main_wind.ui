@@ -31,66 +31,6 @@ background-color: qlineargradient(spread:pad, x1:0.522682, y1:1, x2:0.5, y2:0, s
     </font>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="4" column="0">
-     <widget class="QPushButton" name="ButtonWorkingSession">
-      <property name="font">
-       <font>
-        <family>Fixedsys</family>
-       </font>
-      </property>
-      <property name="mouseTracking">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Working session #</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QPushButton" name="ButtonTeaching">
-      <property name="font">
-       <font>
-        <family>Fixedsys</family>
-       </font>
-      </property>
-      <property name="mouseTracking">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Teaching #</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="ButtonChatGPT">
-      <property name="font">
-       <font>
-        <family>Fixedsys</family>
-       </font>
-      </property>
-      <property name="mouseTracking">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>ChatGPT #</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="ButtonProject">
-      <property name="font">
-       <font>
-        <family>Fixedsys</family>
-       </font>
-      </property>
-      <property name="mouseTracking">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Project #</string>
-      </property>
-     </widget>
-    </item>
     <item row="4" column="1">
      <widget class="QPushButton" name="ButtonTranslate">
       <property name="font">
@@ -136,21 +76,6 @@ background-color: qlineargradient(spread:pad, x1:0.522682, y1:1, x2:0.5, y2:0, s
       </property>
      </widget>
     </item>
-    <item row="6" column="1">
-     <widget class="QPushButton" name="ButtonReadQT">
-      <property name="font">
-       <font>
-        <family>Fixedsys</family>
-       </font>
-      </property>
-      <property name="mouseTracking">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Read QT docs #</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="2">
      <widget class="QPushButton" name="ButtonYouTubeStatistics">
       <property name="font">
@@ -166,8 +91,8 @@ background-color: qlineargradient(spread:pad, x1:0.522682, y1:1, x2:0.5, y2:0, s
       </property>
      </widget>
     </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="ButtonYouTube">
+    <item row="6" column="1">
+     <widget class="QPushButton" name="ButtonReadQT">
       <property name="font">
        <font>
         <family>Fixedsys</family>
@@ -177,7 +102,7 @@ background-color: qlineargradient(spread:pad, x1:0.522682, y1:1, x2:0.5, y2:0, s
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>YouYube</string>
+       <string>Read QT docs #</string>
       </property>
      </widget>
     </item>
@@ -196,6 +121,21 @@ background-color: qlineargradient(spread:pad, x1:0.522682, y1:1, x2:0.5, y2:0, s
       </property>
      </widget>
     </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="ButtonYouTube">
+      <property name="font">
+       <font>
+        <family>Fixedsys</family>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>YouYube</string>
+      </property>
+     </widget>
+    </item>
     <item row="4" column="2">
      <widget class="QPushButton" name="ButtonYouTubeMusic">
       <property name="font">
@@ -208,6 +148,81 @@ background-color: qlineargradient(spread:pad, x1:0.522682, y1:1, x2:0.5, y2:0, s
       </property>
       <property name="text">
        <string>YouTube Music</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="ButtonTeaching">
+      <property name="font">
+       <font>
+        <family>Fixedsys</family>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Teaching #</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="ButtonWorkingSession">
+      <property name="font">
+       <font>
+        <family>Fixedsys</family>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Working session #</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="ButtonProject">
+      <property name="font">
+       <font>
+        <family>Fixedsys</family>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Project #</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="ButtonChatGPT">
+      <property name="font">
+       <font>
+        <family>Fixedsys</family>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>ChatGPT #</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QPushButton" name="ButtonPCoff">
+      <property name="font">
+       <font>
+        <family>Fixedsys</family>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>PC off</string>
       </property>
      </widget>
     </item>

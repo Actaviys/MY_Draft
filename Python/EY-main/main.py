@@ -12,6 +12,8 @@ ui.setupUi(MainWindow)
 
 
 import Commands_Functions as cf
+ui.ButtonPCoff.clicked.connect(cf.pc_off_func) # Вимикаю ПК
+
 def openYouTube():
     cf.youtube_open_func([])
 ui.ButtonYouTube.clicked.connect(openYouTube)
@@ -20,6 +22,18 @@ ui.ButtonYouTube.clicked.connect(openYouTube)
 def openYouTubeMusic():
     cf.youtube_open_func(["M"])
 ui.ButtonYouTubeMusic.clicked.connect(openYouTubeMusic)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

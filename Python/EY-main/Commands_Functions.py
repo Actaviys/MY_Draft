@@ -23,12 +23,12 @@ def pc_read_information(elementName:list):
                 
             except: print(f"Не виконано {elnm}")
             # print(elnm)
+# pc_read_information(["123qw", "wer", "CPU", "234", "DISK"])
 
-
-pc_read_information(["123qw", "wer", "CPU", "234", "DISK"])
 
 
 #-#################
+from WidowFile.QTWindow import main_wind_ui, cmdEY_ui, QtWindTest_ui, WindSerialPort_ui
 def basic_func_open_qt_window(FileNameWind):
     """ 
     Функція відкриття вікон QT. \n

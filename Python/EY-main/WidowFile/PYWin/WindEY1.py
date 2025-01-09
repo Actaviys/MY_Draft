@@ -90,3 +90,28 @@ ui.pushButton_3.clicked.connect(connect_to_arduino)
 def open_window(): # Функція для відкриття вікна
     MainWindow.show()
     app.exec_()
+
+
+
+###
+# import sys
+# app = QtWidgets.QApplication(sys.argv)
+# MainWindow = QtWidgets.QMainWindow()
+# ui = Ui_MainWindow()
+# ui.setupUi(MainWindow) 
+
+
+# def open_window(): # Функція для відкриття вікна
+#     MainWindow.show()
+#     app.exec_()
+# open_window()
+
+
+# import sys
+# app = QtWidgets.QApplication(sys.argv)
+# MainWindow = QtWidgets.QMainWindow()
+# ui = Ui_MainWindow()
+# ui.setupUi(MainWindow)
+# MainWindow.show() #Відтворюємо інтерфейс
+# app.exec() #Запускаємо програму
+######

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\A1\Desktop\Projects\Python\EY-main\QTWindow\WindEY.ui'
+# Form implementation generated from reading ui file 'c:\Users\A1\Desktop\Projects\Python\EY-main\WidowFile\QTWindow\WindSerialPort.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #

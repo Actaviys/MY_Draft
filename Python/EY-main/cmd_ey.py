@@ -43,6 +43,9 @@ def main():  # Основна функція з циклом
                 
                 case "PC" | "ЗС": Commands_Functions.pc_read_information(args) # Виводжу інформацію про комп'ютер
                 
+                case "M" | "Ь": 
+                    import main
+                
                 
 
                 # case "f" | "а": Commands_Functions.open_other_files() # Відкриваю різні файли

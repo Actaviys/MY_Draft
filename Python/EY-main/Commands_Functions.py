@@ -73,8 +73,8 @@ def youtube_open_func(args): # Відкриває ютуб по командах
 def pc_off_func(): # Вимикає комп'ютер
     # 'shutdown /s /t 0'
     pg.hotkey("win", "r")
-    # pg.typewrite("shutdown /s /t 0")
-    pg.typewrite("cmd")
+    pg.typewrite("shutdown /s /t 0")
+    # pg.typewrite("cmd")
     pg.hotkey("enter")
 ##################    
 

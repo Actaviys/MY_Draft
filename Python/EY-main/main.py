@@ -37,6 +37,8 @@ ui.ButtonYouTubeMusic.clicked.connect(openYouTubeMusic)
 
 
 
-
-MainWindow.show()
-app.exec_()
+def start_main():
+    MainWindow.show()
+    # app.exec_()
+    sys.exit(app.exec_())
+# start_main()

@@ -7,7 +7,7 @@ $ git config --global user.email johndoe@example.com\
 
 
 Команди для cmd:
-cd (name_directory) -> Перейни в папку
-dir -> Виводить всі елементи в поточній папці
-cls/clear -> Очищає консоль
-start -> Запускає файл
+cd (name_directory) -> Перейни в папку \
+dir -> Виводить всі елементи в поточній папці \
+cls/clear -> Очищає консоль \
+start -> Запускає файл 

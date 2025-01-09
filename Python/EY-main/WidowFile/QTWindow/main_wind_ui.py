@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(652, 214)
+        MainWindow.resize(812, 289)
         MainWindow.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("c:\\Users\\A1\\Desktop\\Projects\\Python\\EY-main\\WidowFile\\QTWindow\\../../Files/iconey.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)

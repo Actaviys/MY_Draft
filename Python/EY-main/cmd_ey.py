@@ -24,10 +24,9 @@ def parse_input(user_input):
 
 
 def main():  # Основна функція з циклом
-
-    print("Welcome to the assistant bot!")
+    print("Welcome to the assistant!")
     while True:  # Основний цикл для постійного запиту команд
-        user_input = input("Enter a command: ")  # Запитую команду
+        user_input = input("Enter a command-> ")  # Запитую команду
 
         try:  # Якщо є команда то виконую перевірки
             # Зберігаю результат парсингу в змінні
@@ -59,5 +58,5 @@ def main():  # Основна функція з циклом
             # Якщо команда відсутня виводжу підказку #
             print("Incorrect command... \nEnter 'help'")
 
-if __name__ == "__main__": # Для циклу
-    main()
+# if __name__ == "__main__": # Для циклу
+#     main()

@@ -1,7 +1,7 @@
 import webbrowser as wb
 from WidowFile.PYWin import WindEY1, QtWindEY2
 import psutil as pl
-
+import pyautogui as pg
 
 
 def pc_read_information(elementName:list):
@@ -23,12 +23,12 @@ def pc_read_information(elementName:list):
                 
             except: print(f"Не виконано {elnm}")
             # print(elnm)
+# pc_read_information(["123qw", "wer", "CPU", "234", "DISK"])
 
-
-pc_read_information(["123qw", "wer", "CPU", "234", "DISK"])
 
 
 #-#################
+from WidowFile.QTWindow import main_wind_ui, cmdEY_ui, QtWindTest_ui, WindSerialPort_ui
 def basic_func_open_qt_window(FileNameWind):
     """ 
     Функція відкриття вікон QT. \n
@@ -63,6 +63,22 @@ def youtube_open_func(args): # Відкриває ютуб по командах
                 
     else: wb.open("https://www.youtube.com/") # Якщо небуло команди то на головну
 ##################
+
+
+
+
+
+
+#-#################
+def pc_off_func(): # Вимикає комп'ютер
+    # 'shutdown /s /t 0'
+    pg.hotkey("win", "r")
+    pg.typewrite("shutdown /s /t 0")
+    # pg.typewrite("cmd")
+    pg.hotkey("enter")
+##################    
+
+
 
 
 # def open_other_files():

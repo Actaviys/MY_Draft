@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\A1\Desktop\Projects\Python\EY-main\QTWindow\QtWindEY.ui'
+# Form implementation generated from reading ui file 'c:\Users\A1\Desktop\Projects\Python\EY-main\WidowFile\QTWindow\QtWindTest.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -127,3 +127,12 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText(_translate("MainWindow", "Send"))
         self.checkBox.setText(_translate("MainWindow", "CheckBox"))
         self.label_5.setText(_translate("MainWindow", "TextLabel"))
+
+
+# import sys
+# app = QtWidgets.QApplication(sys.argv)
+# MainWindow = QtWidgets.QMainWindow()
+# ui = Ui_MainWindow()
+# ui.setupUi(MainWindow)
+# MainWindow.show() #Відтворюємо інтерфейс
+# app.exec() #Запускаємо програму

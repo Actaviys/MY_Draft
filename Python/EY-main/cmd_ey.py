@@ -2,14 +2,14 @@ import time
 import Commands_Functions
 allcommands = \
 """ 
-- help --> Всі команди
+- h --> Всі команди
 - yt --> Відкриваю ютуб 
 - qq --> Вихід з програми
 - T --> Перекладач
 - w --> Відкриваю нове вікно QT
+- m --> Відкриваю головне меню помічника
 
 - f - Відкриваю різні файли
-- A - Підключитись до Arduino
 """
 
 
@@ -42,6 +42,10 @@ def main():  # Основна функція з циклом
                 case "w" | "ц": Commands_Functions.basic_func_open_qt_window(args) # Відкриваю нове вікно QT #
                 
                 case "PC" | "ЗС": Commands_Functions.pc_read_information(args) # Виводжу інформацію про комп'ютер
+                
+                case "m" | "ь": # Відкриваю головне меню помічника
+                    import main
+                    main.start_main()
                 
                 
 

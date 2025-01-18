@@ -7,8 +7,8 @@ $ git config --global user.email johndoe@example.com\
 
 
 ### Бібліотеки:
-pip install PyQt5
-pip install psutil
+pip install PyQt5 \
+pip install psutil \
 pip install matplotlib
 
 

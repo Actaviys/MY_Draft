@@ -11,5 +11,5 @@ pyuic5 -x WidowFile\QTWindow\WindEY.ui -o WindEY1.py
 
 
 Для створення .exe: \
-pyinstaller --onefile --console --icon=Files\iconey.ico main_ey.py
+pyinstaller --onefile --noconsole --icon=Files\iconey.ico main.py
 

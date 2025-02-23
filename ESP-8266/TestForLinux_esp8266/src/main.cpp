@@ -9,22 +9,45 @@ void setup() {
   Serial.begin(115200);
   pinMode(LEDred, OUTPUT);
   pinMode(LEDgreen, OUTPUT);
+
+  // digitalWrite(LEDgreen, 1);
+  // digitalWrite(LEDred, 1);
 }
 
 void loop() {
   if (Serial.available() > 0 ){
     inBytes = Serial.readStringUntil('\n');
-    if (inBytes == "on"){
+    if (inBytes == "LedGreen,1"){ // Led Green
       digitalWrite(LEDgreen, 1);
+      Serial.print("ret. disp. - ");
+      Serial.println(inBytes);
     }
-    if (inBytes == "off"){
+    if (inBytes == "LedGreen,0"){
       digitalWrite(LEDgreen, 0);
+      Serial.print("ret. disp. - ");
+      Serial.println(inBytes);
     }
+
+    if (inBytes == "LedRed,1"){ // Led Red
+      digitalWrite(LEDred, 1);
+      Serial.print("ret. disp. - ");
+      Serial.println(inBytes);
+    }
+    if (inBytes == "LedRed,0"){
+      digitalWrite(LEDred, 0);
+      Serial.print("ret. disp. - ");
+      Serial.println(inBytes);
+    }
+
+    if (inBytes == "Display"){ // Display
+      Serial.print("ret. disp. - ");
+      Serial.println(inBytes);
+    }
+    
   }
-  // Serial.println("Ok");
-  // digitalWrite(LEDred, 1);
-  // digitalWrite(LEDgreen, 0);
-  // delay(600);
+
+
+  
 
 }
 

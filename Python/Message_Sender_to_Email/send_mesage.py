@@ -1,28 +1,44 @@
 import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
-def send_to_email(sd_mesage):
-    sender = "pc.sending.notification@gmail.com"
-    senderPassw = "********"
-    print("1")
+# Налаштування
+SMTP_SERVER = "youremail@gmail.com"  # Для Gmail
+SMTP_PORT = 587
+
+EMAIL_SENDER = "pc.sending.notification@gmail.com" # youremail@gmail.com
+EMAIL_PASSWORD = "*** ***** ***"  # Використовуйте пароль додатка, якщо увімкнено 2FA
+
+EMAIL_RECEIVER = "useremail@gmail.com"
+
+
+ 
+
+# Відправка листа
+def send_message_to_email(text_message, text_header="Привіт! Це тестове повідомлення з Python."):
+    # Створення листа
+    msg = MIMEMultipart()
+    msg["From"] = EMAIL_SENDER
+    msg["To"] = EMAIL_RECEIVER
+    msg["Subject"] = text_header
+
+    body = text_message
+    msg.attach(MIMEText(body, "plain"))
+    # print(msg.as_string()) #
     
-    # server = smtplib.SMTP("login.live.com", 5000)
-    server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-    print("2")
-    server.login(sender, senderPassw)
-    # server.starttls()
-    print("3")
     try:
-        # server.login(sender, senderPassw)
-        # server.sendmail(sender, "actaviys88@gmail.com", sd_mesage)
-        
-        return "Успішно відправлено"
-    
-    except Exception:
-        print(f"{Exception}: Невірний логін або пароль!!!")
-    
-    return print("4")
+        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+        server.starttls()  # Шифрування з'єднання
+        server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+        server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_string())
+        server.quit()
+        print("Лист успішно відправлено!")
+    except Exception as e:
+        print("Помилка:", e)
 
-print(send_to_email("Повідомлення про успіх :)"))
+
+send_message_to_email("Привіт Дмитро \nПовідомлення про успіх")
+
 
 
 

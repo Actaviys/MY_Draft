@@ -5,8 +5,10 @@ from email.mime.multipart import MIMEMultipart
 # Налаштування
 SMTP_SERVER = "smtp.gmail.com"  # Для Gmail
 SMTP_PORT = 587
+
 EMAIL_SENDER = "pc.sending.notification@gmail.com"
-EMAIL_PASSWORD = "vtys1612"  # Використовуйте пароль додатка, якщо увімкнено 2FA
+EMAIL_PASSWORD = "*******"  # Використовуйте пароль додатка, якщо увімкнено 2FA
+
 EMAIL_RECEIVER = "actaviys88@gmail.com"
 
 # Створення листа
